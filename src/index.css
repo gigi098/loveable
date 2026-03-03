@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 20 10% 8%;
+    --foreground: 40 30% 90%;
+
+    --card: 20 8% 12%;
+    --card-foreground: 40 30% 90%;
+
+    --popover: 20 8% 12%;
+    --popover-foreground: 40 30% 90%;
+
+    --primary: 38 70% 55%;
+    --primary-foreground: 20 10% 8%;
+
+    --secondary: 20 6% 16%;
+    --secondary-foreground: 40 20% 80%;
+
+    --muted: 20 6% 16%;
+    --muted-foreground: 30 10% 50%;
+
+    --accent: 38 70% 55%;
+    --accent-foreground: 20 10% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 20 8% 20%;
+    --input: 20 8% 20%;
+    --ring: 38 70% 55%;
+
+    --radius: 0.25rem;
+
+    --sidebar-background: 20 10% 8%;
+    --sidebar-foreground: 40 30% 90%;
+    --sidebar-primary: 38 70% 55%;
+    --sidebar-primary-foreground: 20 10% 8%;
+    --sidebar-accent: 20 6% 16%;
+    --sidebar-accent-foreground: 40 20% 80%;
+    --sidebar-border: 20 8% 20%;
+    --sidebar-ring: 38 70% 55%;
+
+    /* Custom tokens */
+    --cream: 40 30% 90%;
+    --gold: 38 70% 55%;
+    --warm-dark: 20 10% 8%;
+    --warm-gray: 20 6% 16%;
+    --text-dim: 30 10% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Serif TC', serif;
+  }
+}
+
+@layer utilities {
+  .font-serif-display {
+    font-family: 'Playfair Display', 'Noto Serif TC', serif;
+  }
+
+  .font-sans-tc {
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+
+  .font-serif-tc {
+    font-family: 'Noto Serif TC', serif;
+  }
+
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+
+  .bg-warm-dark {
+    background-color: hsl(var(--warm-dark));
+  }
+
+  .bg-warm-gray {
+    background-color: hsl(var(--warm-gray));
+  }
+
+  .text-dim {
+    color: hsl(var(--text-dim));
+  }
+
+  .border-gold {
+    border-color: hsl(var(--gold));
+  }
+
+  .gradient-gold {
+    background: linear-gradient(135deg, hsl(38 70% 55%), hsl(30 60% 45%));
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--warm-dark));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--gold) / 0.3);
+  border-radius: 2px;
+}
+
+/* Selection */
+::selection {
+  background: hsl(var(--gold) / 0.3);
+  color: hsl(var(--foreground));
+}
